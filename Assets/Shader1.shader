@@ -32,7 +32,7 @@ Shader "Unlit/Shader1"
 
             struct Interpolators
             {
-                float2 uv : TEXCOORD0;
+              //  float2 uv : TEXCOORD0;
               //  float4 uv : TEXCOORD1;
               //  float4 uv : TEXCOORD2;
               //  float4 uv : TEXCOORD3;
