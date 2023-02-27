@@ -4,6 +4,8 @@ Shader "Unlit/Shader1"
     {
       //_MainTex ("Texture", 2D) = "white" {}
       _Color ("Color",Color) = (1,1,1,1)
+      _Scale ("UV Scale", Float) = 1
+      _Offset ("UV Offset", Float) = 0
     }
     SubShader
     {
@@ -19,7 +21,9 @@ Shader "Unlit/Shader1"
             #include "UnityCG.cginc"
 
             float _Color;
-            
+            float _Scale;
+            float _Offset;
+
             struct Meshdata
             {
                 float4 vertex : POSITION;
@@ -32,12 +36,13 @@ Shader "Unlit/Shader1"
 
             struct Interpolators
             {
-            //float2 uv : TEXCOORD0;
+           // float2 tangent : TEXCOORD1;
             float3 normal : TEXCOORD0;
-              //  float4 uv : TEXCOORD1;
+           // float2 value : TEXCOORD2;
+            float2 uv : TEXCOORD1;
               //  float4 uv : TEXCOORD2;
               //  float4 uv : TEXCOORD3;
-                float4 vertex : SV_POSITION;
+            float4 vertex : SV_POSITION;
             };
 
 
@@ -45,13 +50,14 @@ Shader "Unlit/Shader1"
             {
                 Interpolators o;
                 o.vertex = UnityObjectToClipPos(v.vertex); 
-                o.normal = v.normals; 
+                o.normal = UnityObjectToWorldNormal(v.normals); 
+                o.uv = (v.uv0 + _Offset ) * _Scale;
                 return o;
             }
 
             float4 frag (Interpolators i) : SV_Target
             { 
-                return float4(i.normal, 1);
+                return float4(i.uv, 0, 1);
             }
             ENDCG
         }
