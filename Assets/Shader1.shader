@@ -3,9 +3,10 @@ Shader "Unlit/Shader1"
     Properties
     {
       //_MainTex ("Texture", 2D) = "white" {}
-      _Color ("Color",Color) = (1,1,1,1)
-      _Scale ("UV Scale", Float) = 1
-      _Offset ("UV Offset", Float) = 0
+      _ColorA ("Color A",Color) = (1,1,1,1)
+      _ColorB ("Color B",Color) = (1,1,1,1)
+      _ColorStart ("Color Start",Range(0,1) ) = 0
+      _ColorEnd ("Color End", Range(0,1)) = 1
     }
     SubShader
     {
@@ -20,9 +21,10 @@ Shader "Unlit/Shader1"
 
             #include "UnityCG.cginc"
 
-            float _Color;
-            float _Scale;
-            float _Offset;
+            float4 _ColorA;
+            float4 _ColorB;
+            float _ColorStart;
+            float _ColorEnd;
 
             struct Meshdata
             {
@@ -51,13 +53,23 @@ Shader "Unlit/Shader1"
                 Interpolators o;
                 o.vertex = UnityObjectToClipPos(v.vertex); 
                 o.normal = UnityObjectToWorldNormal(v.normals); 
-                o.uv = (v.uv0 + _Offset ) * _Scale;
+                o.uv = v.uv0;   //(v.uv0 + _Offset ) * _Scale;
                 return o;
+            }
+            float InverseLerp(float a,float b, float v)
+            {
+                return (v-a) / (b-a) ;
             }
 
             float4 frag (Interpolators i) : SV_Target
-            { 
-                return float4(i.uv, 0, 1);
+            {   
+              //  float4 outColor = lerp(_ColorA,_ColorB,i.uv.x); #blend betwwen two colors
+              //  return outColor;
+              float t = saturate(InverseLerp(_ColorStart,_ColorEnd,i.uv.x)) ;
+              t = frac(t);                                             //if we write number which less than 0, result will be equal to the 0.
+                                                                       //if we write number which bigger than 1, result wil be  equal to the 1,
+              float4 outColor = lerp(_ColorA,_ColorB,t);
+              return outColor;
             }
             ENDCG
         }

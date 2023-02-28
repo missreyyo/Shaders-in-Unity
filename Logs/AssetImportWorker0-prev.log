@@ -15,7 +15,7 @@ C:/Users/Reyhan Duygu/Desktop/deneme/Shaders
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64214
+65291
 Successfully changed project path to: C:/Users/Reyhan Duygu/Desktop/deneme/Shaders
 C:/Users/Reyhan Duygu/Desktop/deneme/Shaders
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/Users/Reyhan Duygu/Desktop/deneme/Shaders
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [14936] Host "[IP] 192.168.1.104 [Port] 0 [Flags] 2 [Guid] 356512766 [EditorId] 356512766 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-7RT3PR0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [15088] Host "[IP] 192.168.1.104 [Port] 0 [Flags] 2 [Guid] 952816309 [EditorId] 952816309 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-7RT3PR0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [14936] Host "[IP] 192.168.1.104 [Port] 0 [Flags] 2 [Guid] 356512766 [EditorId] 356512766 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-7RT3PR0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [15088] Host "[IP] 192.168.1.104 [Port] 0 [Flags] 2 [Guid] 952816309 [EditorId] 952816309 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-7RT3PR0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Library Redirect Path: Library/Refreshing native plugins compatible for Editor in 7.99 ms, found 3 plugins.
+Library Redirect Path: Library/Refreshing native plugins compatible for Editor in 13.78 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2023.1.0b1 (88c7b636347d)
 [Subsystems] Discovering subsystems at path C:/Program Files/unity/2023.1.0b1/Editor/Data/Resources/UnitySubsystems
@@ -67,7 +67,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/unity/2023.1.0b1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/unity/2023.1.0b1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/unity/2023.1.0b1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56236
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56196
 Begin MonoManager ReloadAssembly
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
@@ -84,45 +84,45 @@ Register platform support module: C:/Program Files/unity/2023.1.0b1/Editor/Data/
 Register platform support module: C:/Program Files/unity/2023.1.0b1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: C:/Program Files/unity/2023.1.0b1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
 Register platform support module: C:/Program Files/unity/2023.1.0b1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.005602 seconds.
-- Loaded All Assemblies, in  0.506 seconds
+Registered in 0.008855 seconds.
+- Loaded All Assemblies, in  0.569 seconds
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 279 ms
+Android Extension - Scanning For ADB Devices 299 ms
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-- Finished resetting the current domain, in  0.673 seconds
-Domain Reload Profiling: 1177ms
-	BeginReloadAssembly (140ms)
+- Finished resetting the current domain, in  0.972 seconds
+Domain Reload Profiling: 1539ms
+	BeginReloadAssembly (150ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (44ms)
-	RebuildNativeTypeToScriptingClass (18ms)
-	initialDomainReloadingComplete (70ms)
-	LoadAllAssembliesAndSetupDomain (231ms)
-		LoadAssemblies (139ms)
+	RebuildCommonClasses (56ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (96ms)
+	LoadAllAssembliesAndSetupDomain (248ms)
+		LoadAssemblies (148ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (224ms)
-			TypeCache.Refresh (223ms)
-				TypeCache.ScanAssembly (208ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
+		AnalyzeDomain (241ms)
+			TypeCache.Refresh (240ms)
+				TypeCache.ScanAssembly (223ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (674ms)
+	FinalizeReload (972ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (619ms)
+		SetupLoadedEditorAssemblies (898ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (395ms)
-			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (7ms)
-			ProcessInitializeOnLoadAttributes (155ms)
-			ProcessInitializeOnLoadMethodAttributes (59ms)
+			InitializePlatformSupportModulesInManaged (442ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (12ms)
+			ProcessInitializeOnLoadAttributes (314ms)
+			ProcessInitializeOnLoadMethodAttributes (125ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -145,53 +145,53 @@ C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 Symbol file LoadedFromMemory doesn't match image C:\Users\Reyhan Duygu\Desktop\deneme\Shaders\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Reyhan Duygu\Desktop\deneme\Shaders\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  1.177 seconds
-Refreshing native plugins compatible for Editor in 4.34 ms, found 3 plugins.
+- Loaded All Assemblies, in  2.551 seconds
+Refreshing native plugins compatible for Editor in 7.89 ms, found 3 plugins.
 Native extension for Android target not found
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.514 seconds
-Domain Reload Profiling: 1687ms
-	BeginReloadAssembly (145ms)
+- Finished resetting the current domain, in  4.788 seconds
+Domain Reload Profiling: 7335ms
+	BeginReloadAssembly (336ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (13ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (27ms)
-	RebuildCommonClasses (50ms)
-	RebuildNativeTypeToScriptingClass (15ms)
-	initialDomainReloadingComplete (44ms)
-	LoadAllAssembliesAndSetupDomain (919ms)
-		LoadAssemblies (340ms)
+		CreateAndSetChildDomain (44ms)
+	RebuildCommonClasses (124ms)
+	RebuildNativeTypeToScriptingClass (25ms)
+	initialDomainReloadingComplete (89ms)
+	LoadAllAssembliesAndSetupDomain (1973ms)
+		LoadAssemblies (822ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (655ms)
-			TypeCache.Refresh (413ms)
-				TypeCache.ScanAssembly (390ms)
-			ScanForSourceGeneratedMonoScriptInfo (237ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (514ms)
+		AnalyzeDomain (1360ms)
+			TypeCache.Refresh (779ms)
+				TypeCache.ScanAssembly (737ms)
+			ScanForSourceGeneratedMonoScriptInfo (566ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (4789ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (395ms)
+		SetupLoadedEditorAssemblies (4035ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (21ms)
-			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (95ms)
-			ProcessInitializeOnLoadAttributes (244ms)
-			ProcessInitializeOnLoadMethodAttributes (26ms)
-			AfterProcessingInitializeOnLoad (4ms)
+			InitializePlatformSupportModulesInManaged (145ms)
+			SetLoadedEditorAssemblies (13ms)
+			BeforeProcessingInitializeOnLoad (1334ms)
+			ProcessInitializeOnLoadAttributes (2453ms)
+			ProcessInitializeOnLoadMethodAttributes (82ms)
+			AfterProcessingInitializeOnLoad (8ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 2.37 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (13ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 6.37 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3412 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 26 unused Assets / (54.4 KB). Loaded Objects now: 3878.
-Memory consumption went from 128.3 MB to 128.3 MB.
-Total: 4.922600 ms (FindLiveObjects: 0.278400 ms CreateObjectMapping: 0.296100 ms MarkObjects: 4.259900 ms  DeleteObjects: 0.087200 ms)
+Memory consumption went from 128.3 MB to 128.2 MB.
+Total: 12.976200 ms (FindLiveObjects: 0.892100 ms CreateObjectMapping: 0.480600 ms MarkObjects: 11.362000 ms  DeleteObjects: 0.239400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
@@ -206,25 +206,49 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 714688.963630 seconds.
-  path: Assets/green.mat
-  artifactKey: Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/green.mat using Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9af8ffc432f6b1358777907ea7e26ca7') in 0.203836 seconds 
+  Time since last request: 805524.167753 seconds.
+  path: Assets/red.mat
+  artifactKey: Guid(f352c28e73b837a459b41a541f5a95d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/red.mat using Guid(f352c28e73b837a459b41a541f5a95d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d88f00283737b1395a402d7cdcc5b88') in 0.157368 seconds 
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 187.081391 seconds.
+  Time since last request: 668.163101 seconds.
   path: Assets/green.mat
   artifactKey: Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/green.mat using Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9025ca6b72ce522ec8183527399c4341') in 0.014067 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 4.164149 seconds.
-  path: Assets/green.mat
-  artifactKey: Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/green.mat using Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adc3b91207bc87a91c4f8495802c00c0') in 0.047504 seconds 
+Start importing Assets/green.mat using Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4aef680c8dfe966ac0fbad8569e67a00') in 0.055795 seconds 
 Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 248.241174 seconds.
+  path: Assets/green.mat
+  artifactKey: Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/green.mat using Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ede7eae81d1748aaa7c7b7b22cbd435') in 0.058258 seconds 
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 115.527490 seconds.
+  path: Assets/green.mat
+  artifactKey: Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/green.mat using Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ead306cd177e0e0cfaef4ef4d20fbf72') in 0.063343 seconds 
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 612.814226 seconds.
+  path: Assets/green.mat
+  artifactKey: Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/green.mat using Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15e60735e9a61f7562a23ce52318393e') in 0.053360 seconds 
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 77.978490 seconds.
+  path: Assets/green.mat
+  artifactKey: Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/green.mat using Guid(c4c79dd3dce0e134d8337e9a72331ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3f557ad391f5303b71d64c6b9e20f75') in 0.029151 seconds 
+Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
