@@ -10,11 +10,16 @@ Shader "Unlit/Shader2"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Transparent"
+        "Queue" = "Transparent" }     //render order 
     
 
         Pass
-        {
+        { 
+            Cull Off        
+            ZWrite Off       // transparent seems
+            Blend One One  // additive   
+         
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
