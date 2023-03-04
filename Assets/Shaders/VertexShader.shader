@@ -2,55 +2,74 @@ Shader "Unlit/VertexShader"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
+      //_MainTex ("Texture", 2D) = "white" {}
+      _ColorA ("Color A",Color) = (1,1,1,1)
+      _ColorB ("Color B",Color) = (1,1,1,1)
+      _ColorStart ("Color Start",Range(0,1) ) = 0
+      _ColorEnd ("Color End", Range(0,1)) = 1
+      _WaveAmp ("Wave Amplitude", Range(0,0.2)) = 0.1
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
-        LOD 100
+        Tags { "RenderType"="Opaque"
+       }     //render order 
+    
 
         Pass
-        {
+        { 
+            Cull Off        
+            ZWrite Off       // transparent seems
+            Blend One One  // additive   
+         
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            // make fog work
-            #pragma multi_compile_fog
 
             #include "UnityCG.cginc"
+            #define TAU 6.28318530718
+            float4 _ColorA;
+            float4 _ColorB;
+            float _ColorStart;
+            float _ColorEnd;
+            float _WaveAmp;
 
-            struct appdata
+            struct Meshdata
             {
                 float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
+                float3 normals : NORMAL;
+                float4 uv0 : TEXCOORD0;
+               
             };
 
-            struct v2f
+            struct Interpolators
             {
-                float2 uv : TEXCOORD0;
-                UNITY_FOG_COORDS(1)
-                float4 vertex : SV_POSITION;
+            float3 normal : TEXCOORD0;
+            float2 uv : TEXCOORD1;         
+            float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
 
-            v2f vert (appdata v)
+            Interpolators vert (Meshdata v)
             {
-                v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                UNITY_TRANSFER_FOG(o,o.vertex);
+                Interpolators o;
+                 float wave = cos((v.uv0.y - _Time.y * 0.1)* TAU * 5) * 0.5 + 0.5;
+                 v.vertex.y = wave * _WaveAmp;
+
+                o.vertex = UnityObjectToClipPos(v.vertex); 
+                o.normal = UnityObjectToWorldNormal(v.normals); 
+                o.uv = v.uv0;   //(v.uv0 + _Offset ) * _Scale;
                 return o;
             }
-
-            fixed4 frag (v2f i) : SV_Target
+            float InverseLerp(float a,float b, float v)
             {
-                // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
-                // apply fog
-                UNITY_APPLY_FOG(i.fogCoord, col);
-                return col;
+                return (v-a) / (b-a) ;
+            }
+
+            float4 frag (Interpolators i) : SV_Target
+            {   
+                float wave = cos((i.uv.y - _Time.y * 0.1)* TAU * 5) * 0.5 + 0.5;
+                  return wave;      
+        
             }
             ENDCG
         }
