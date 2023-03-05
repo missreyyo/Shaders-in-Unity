@@ -31,7 +31,7 @@ Material:
     m_Floats:
     - _ColorEnd: 1
     - _ColorStart: 0
-    - _WaveAmp: 0.095
+    - _WaveAmp: 0.105
     m_Colors:
     - _ColorA: {r: 0.032075405, g: 0.9431329, b: 1, a: 1}
     - _ColorB: {r: 0, g: 0, b: 0, a: 1}
