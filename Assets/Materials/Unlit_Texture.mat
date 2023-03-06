@@ -27,6 +27,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: 46c9b2c471a59f24cbe88eae93a32f60, type: 3}
         m_Scale: {x: 1.36, y: 1.85}
         m_Offset: {x: 0.21, y: 0.46}
+    - _pattern:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _secondTex:
+        m_Texture: {fileID: 2800000, guid: 4eb74ebf4ec0ad944816dd6ceffdb775, type: 3}
+        m_Scale: {x: -2.33, y: -3.9}
+        m_Offset: {x: -1.78, y: 0}
     m_Ints: []
     m_Floats: []
     m_Colors: []
