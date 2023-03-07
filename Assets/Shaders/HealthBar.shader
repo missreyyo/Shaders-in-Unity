@@ -40,11 +40,20 @@ Shader "Unlit/HealthBar"
                 o.uv = v.uv;
                 return o;
             }
+            float InverseLerp(float a, float b , float v){
+                return (v-a)/ (b-a);
+            }
 
             fixed4 frag (Interpolators i) : SV_Target
             {
+               float healthbarMask = _Health > i.uv.x;
+               clip(healthbarMask - 0.5); // transparent one
+               float anotherHealthColor = saturate(InverseLerp(0.2, 0.8, _Health));
                float3 healthbarColor = lerp(float3(1, 0,0), float3(0,1,0), _Health);
-               return float4(healthbarColor, 0);
+               float3 backgroundColor = float3(0,0,0);
+         
+               float3 outColor = lerp (backgroundColor, healthbarColor, healthbarMask);
+               return float4(outColor, 0);
             }
             ENDCG
         }
