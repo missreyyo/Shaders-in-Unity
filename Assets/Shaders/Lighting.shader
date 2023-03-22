@@ -32,6 +32,7 @@ Shader "Unlit/Lighting"
                 float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
                 float3 normal : TEXCOORD1;
+                float3 wPos : TEXCOORD2;
             };
 
             sampler2D _MainTex;
@@ -43,16 +44,21 @@ Shader "Unlit/Lighting"
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.normal = UnityObjectToWorldNormal(v.normal);
+                o.wPos = mul(unity_ObjectToWorld, v.vertex);
                 return o;
             }
 
             float4 frag (Interpolators i) : SV_Target
             {
+                //diffuse lighting
                 float3 N = i.normal;
-
                 float3 L = _WorldSpaceLightPos0.xyz;
-                float diffuseLight = dot(N, L);
-                return float4(diffuseLight.xxx, 1);
+                float diffuseLight = saturate(dot(N, L)) * _LightColor0.xyz;
+
+                //specular lighting
+                float3 V = normalize(_WorldSpaceCameraPos -i.wPos);
+                return float4(V, 1);
+
             }
             ENDCG
         }
